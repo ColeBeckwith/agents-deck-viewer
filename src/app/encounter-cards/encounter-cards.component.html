@@ -1,0 +1,35 @@
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4 col-md-6 agt-card-container"
+			 *ngFor="let encounterCard of encounterCards;">
+			<div class="agt-card agt-encounter-card"
+				 [class.green-encounter-card]="encounterCard.rank === 1"
+				 [class.yellow-encounter-card]="encounterCard.rank === 2"
+				 [class.red-encounter-card]="encounterCard.rank === 3"
+				 [class.black-encounter-card]="encounterCard.rank === 4">
+				<p class="agt-card-title text-center">{{ encounterCard.title }}</p>
+				<div class="agt-card-graphic"></div>
+
+				<ng-container *ngIf="encounterCard.skillCheck">
+					<div class="skill-check-container">
+						<div class="applicable-skills">
+							<div class="skill-bar combat" [class.applicable]="encounterCard.skillCheck.combatApplicable"></div>
+							<div class="skill-bar stealth" [class.applicable]="encounterCard.skillCheck.stealthApplicable"></div>
+							<div class="skill-bar magic" [class.applicable]="encounterCard.skillCheck.magicApplicable"></div>
+							<div class="skill-bar tech" [class.applicable]="encounterCard.skillCheck.techApplicable"></div>
+						</div>
+
+						<p class="medium-text" [innerHtml]="'<b>Pass:</b> ' + encounterCard.successText"></p>
+						<p class="medium-text" [innerHtml]="'<b>Fail:</b> ' + encounterCard.failureText"></p>
+					</div>
+
+					<div *ngIf="encounterCard.skillCheck.luck && encounterCard.skillCheck.luck > 0"
+						 class="luck-icon">
+						<span class="luck-dice-number">{{ encounterCard.skillCheck.luck }}</span>
+						<i class="ra ra-2x ra-clovers"></i>
+					</div>
+				</ng-container>
+			</div>
+		</div>
+	</div>
+</div>

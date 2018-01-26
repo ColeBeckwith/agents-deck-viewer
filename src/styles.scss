@@ -1,1 +1,43 @@
 /* You can add global styles to this file, and also import other style files */
+@import './variables';
+
+body {
+	font-family: "Open Sans", sans-serif;
+}
+
+p {
+	margin-bottom: .5rem;
+}
+
+.agt-card {
+	position: relative;
+	border: 3px solid $agt-neutral;
+	border-radius: 5px;
+	height: 425px;
+	width: 285px;
+	padding: 6px;
+	background-color: $agt-card-background;
+
+	.agt-card-graphic {
+		width: 100%;
+		height: 120px;
+		border: 1px solid $agt-neutral;
+		background-color: white;
+	}
+
+	.agt-card-title {
+		margin-bottom: 3px;
+	}
+}
+
+.large-text {
+	font-size: 14px;
+}
+
+.medium-text {
+	font-size: 12px;
+}
+
+.small-text {
+	font-size: 10px;
+}

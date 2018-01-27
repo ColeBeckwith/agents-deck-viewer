@@ -15,6 +15,8 @@ export class EncounterCard extends Card {
 		this.successText = data.successText;
 		this.failureText = data.failureText;
 
+
+
 		if (data.skillCheck) {
 			this.skillCheck = new SkillCheck(data.skillCheck);
 		} else {

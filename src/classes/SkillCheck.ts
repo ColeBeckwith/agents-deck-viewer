@@ -17,11 +17,12 @@ export class SkillCheck {
 	constructor(data) {
 		this.luck = data.luck;
 		this.difficulty = data.difficulty;
-		console.log(data);
 		this.combatApplicable = data.applicableSkills.indexOf('c') !== -1;
 		this.stealthApplicable = data.applicableSkills.indexOf('s') !== -1;
 		this.techApplicable = data.applicableSkills.indexOf('t') !== -1;
 		this.magicApplicable = data.applicableSkills.indexOf('m') !== -1;
+		this.successText = data.successText;
+		this.failureText = data.failureText;
 	}
 
 }

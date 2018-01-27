@@ -33,6 +33,7 @@
 .applicable-skills {
 	display: flex;
 	justify-content: center;
+	background-color: white;
 
 	.skill-bar {
 		height: 10px;
@@ -58,9 +59,13 @@
 		&.applicable {
 			opacity: 1;
 		}
-
 	}
 }
+
+.skill-check-difficulty {
+	font-size: 20px;
+}
+
 
 .luck-icon {
 	position: absolute;

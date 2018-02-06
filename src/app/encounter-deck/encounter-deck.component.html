@@ -1,0 +1,12 @@
+<div class="agt-card deck-back"
+	 [ngClass]="{'green': deck.modifier === 1, 'yellow': deck.modifier === 2, 'red': deck.modifier === 3, 'black': deck.modifier === 4}">
+	<h2>{{ deck.cardType }}</h2>
+
+	<div class="actions">
+		<button class="btn btn-info">Add to Hand</button>
+		<button class="btn btn-info">Shuffle</button>
+	</div>
+</div>
+
+<agt-deck-stats [deck]="deck"></agt-deck-stats>
+

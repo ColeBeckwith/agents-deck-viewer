@@ -9,6 +9,7 @@ export class SkillCheck {
 	stealthApplicable: boolean;
 	techApplicable: boolean;
 	magicApplicable: boolean;
+	optional: boolean;
 
 	cardsApplied: Array<Card>;
 	onSuccess;
@@ -23,6 +24,7 @@ export class SkillCheck {
 		this.magicApplicable = data.applicableSkills.indexOf('m') !== -1;
 		this.successText = data.successText;
 		this.failureText = data.failureText;
+		this.optional = !!data.optional;
 	}
 
 }

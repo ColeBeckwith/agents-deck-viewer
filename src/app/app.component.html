@@ -1,10 +1,20 @@
-<div class="container-fluid">
+<div class="container-fluid"
+	 [style.margin-bottom.px]="15"
+	 *ngIf="router.url !== '/game'">
 	<div class="row">
 		<button class="btn btn-info" routerLink="/encounter-cards">
 			Encounter Cards
 		</button>
+		<button class="btn btn-info" routerLink="/ability-cards">
+			Ability Cards
+		</button>
+		<button class="btn btn-info" routerLink="/character-cards">
+			Character Cards
+		</button>
+		<button class="btn btn-info" routerLink="/game">
+			Start Game
+		</button>
 	</div>
 </div>
-
 
 <router-outlet></router-outlet>

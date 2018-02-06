@@ -1,0 +1,16 @@
+<div class="container">
+	<p>Magic - Total: {{ totalMagicCards }} Average: {{ averageMagicValue }}</p>
+	<p>Tech - Total: {{ totalTechCards }} Average: {{ averageTechValue }}</p>
+	<p>Combat - Total: {{ totalCombatCards }} Average: {{ averageCombatValue }}</p>
+	<p>Stealth - Total: {{ totalStealthCards }} Average: {{ averageStealthValue }}</p>
+
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4 col-md-6 agt-card-container"
+			 *ngFor="let abilityCard of abilityCards;">
+			<agt-ability-card [card]="abilityCard"></agt-ability-card>
+		</div>
+	</div>
+</div>

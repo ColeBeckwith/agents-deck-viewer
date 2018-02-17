@@ -22,7 +22,6 @@ function buildStat(data, key): Stat {
 	}
 }
 
-
 interface Stats {
 	magic: Stat;
 	stealth: Stat;
@@ -45,12 +44,16 @@ export class CharacterCard extends Card {
 	name: string;
 	bio: string;
 	stats: Stats;
+	health: number;
+	favor: number;
 
 	constructor(data) {
-		super();
+		super(data);
 
 		this.name = data.name;
 		this.bio = data.bio;
+		this.health = 15;
+		this.favor = 3;
 
 		this.stats = buildStats(data);
 	}

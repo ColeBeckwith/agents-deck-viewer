@@ -1,0 +1,54 @@
+@import '../../../../variables';
+
+.agt-encounter-card {
+
+	&.green-encounter-card {
+		border-color: $agt-green-card-back-color;
+		background-color: $agt-green-card-front-color;
+	}
+
+	&.yellow-encounter-card {
+		border-color: $agt-yellow-card-back-color;
+		background-color: $agt-yellow-card-front-color;
+	}
+
+	&.red-encounter-card {
+		border-color: $agt-red-card-back-color;
+		background-color: $agt-red-card-front-color;
+	}
+
+	&.black-encounter-card {
+		border-color: $agt-black-card-back-color;
+		background-color: $agt-black-card-front-color;
+	}
+}
+
+.skill-check-difficulty {
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	span {
+		display: flex;
+		align-items: center;
+		i {
+			padding: 0 5px;
+
+			&.luck-icon {
+				padding-right: 0;
+			}
+
+			&.fa-pause {
+				padding-left: 10px;
+				font-size: 18px;
+			}
+		}
+	}
+}
+
+.snare {
+	position: absolute;
+	bottom: 5px;
+	right: 120px;
+}

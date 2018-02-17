@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+
 @import './variables';
 
 body {
@@ -12,12 +13,14 @@ p {
 
 .agt-card {
 	position: relative;
-	border: 3px solid $agt-neutral;
+	border: 4px solid $agt-neutral;
 	border-radius: 5px;
 	height: 425px;
-	width: 285px;
+	width: $agt-standard-card-width;
 	padding: 10px;
 	background-color: $agt-card-background;
+	overflow: hidden;
+	overflow-y: scroll;
 
 	.agt-card-graphic {
 		width: 100%;
@@ -53,6 +56,37 @@ p {
 		}
 	}
 
+	.applicable-skills {
+		display: flex;
+		justify-content: center;
+		background-color: white;
+
+		.skill-bar {
+			height: 10px;
+			width: 25%;
+			opacity: .3;
+
+			&.combat {
+				background-color: $agt-combat;
+			}
+
+			&.magic {
+				background-color: $agt-magic;
+			}
+
+			&.tech {
+				background-color: $agt-tech;
+			}
+
+			&.stealth {
+				background-color: $agt-stealth;
+			}
+
+			&.applicable {
+				opacity: 1;
+			}
+		}
+	}
 }
 
 .agt-card-container {
@@ -81,6 +115,40 @@ p {
 .deck-back {
 	color: white;
 	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.full-screen {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 9999999999;
+	display: flex;
+	justify-content: center;
+	background-color: white;
+	padding: 15px;
+	overflow-y: scroll;
+}
+
+.flex-vertical {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.flex-horizontal-centered {
+	display: flex;
+	width: 100%;
+	justify-content: center;
+}
+
+.flex-all-centered {
+	display: flex;
+	width: 100%;
+	height: 100%;
 	justify-content: center;
 	align-items: center;
 }

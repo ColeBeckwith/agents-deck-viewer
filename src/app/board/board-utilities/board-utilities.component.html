@@ -1,0 +1,9 @@
+<h3>Board Utilities</h3>
+
+<agt-dice-roller></agt-dice-roller>
+
+<h4>Alert Counter</h4>
+
+<i class="fa fa-arrow-up fa-3x" (click)="raiseAlertCounter()"></i>
+<span [style.font-size.px]="60">{{ boardService.alertCounter }}</span>
+<i class="fa fa-arrow-down fa-3x" (click)="lowerAlertCounter()"></i>

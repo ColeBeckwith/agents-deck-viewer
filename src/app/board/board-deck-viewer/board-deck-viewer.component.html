@@ -1,0 +1,15 @@
+<div *ngIf="!hovered" class="flex-horizontal-centered">
+	<h1 class="card-title">Decks</h1>
+</div>
+
+<ng-container *ngIf="hovered">
+	<div class="agt-card-container deck-container" *ngFor="let deck of deckManager.decks">
+		<agt-ability-deck *ngIf="deck.cardType === 'Ability'" [deck]="deck"></agt-ability-deck>
+		<agt-encounter-deck *ngIf="deck.cardType === 'Encounter'" [deck]="deck"></agt-encounter-deck>
+		<agt-infiltration-deck *ngIf="deck.cardType === 'Infiltration'"
+							   [deck]="deck">
+		</agt-infiltration-deck>
+		<agt-equipment-deck *ngIf="deck.cardType === 'Equipment'" [deck]="deck"></agt-equipment-deck>
+	</div>
+</ng-container>
+

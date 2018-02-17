@@ -1,0 +1,34 @@
+:host {
+	flex: 1;
+	background-color: white;
+	width: 100%;
+	height: 100vh;
+	margin-bottom: 1200px;
+	margin-top: 1200px;
+	padding-left: 100px;
+	padding-right: 100px;
+}
+
+.layout-card-container {
+	padding: 10px;
+	position: relative;
+}
+
+.board-container {
+	display: flex;
+	justify-content: center;
+
+	.row {
+		display: flex;
+		justify-content: center;
+	}
+}
+
+.board-row {
+	display: flex;
+	justify-content: center;
+}
+
+.null-card {
+	opacity: 0;
+}

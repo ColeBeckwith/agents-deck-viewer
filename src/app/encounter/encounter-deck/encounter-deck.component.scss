@@ -1,0 +1,44 @@
+@import '../../../variables';
+
+.green {
+	background-color: $agt-green-card-back-color;
+}
+
+.yellow {
+	background-color: $agt-yellow-card-back-color;
+}
+
+.red {
+	background-color: $agt-red-card-back-color;
+}
+
+.black {
+	background-color: $agt-black-card-back-color;
+}
+
+
+.agt-card {
+	.actions {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		display: none;
+		background-color: rgba(0, 0, 0, 0.4);
+
+		button {
+			margin: 10px;
+		}
+	}
+
+	&:hover {
+		.actions {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+	}
+}
+

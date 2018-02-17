@@ -1,0 +1,21 @@
+@import '../../../../variables';
+
+.bronze-loot-card {
+	border-color: $agt-bronze;
+}
+
+.silver-loot-card {
+	border-color: $agt-silver;
+}
+
+.gold-loot-card {
+	border-color: $agt-gold;
+}
+
+.card-back {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}

@@ -16,7 +16,7 @@ export class AbilityCard extends Card {
 	};
 
 	constructor(data) {
-		super();
+		super(data);
 
 		this.type = this.typeMappings[data.type];
 		this.value = data.value;

@@ -1,0 +1,18 @@
+<div class="full-screen flex-vertical" *ngIf="active">
+	<h1>Select a Character</h1>
+
+	<div class="container-fluid">
+		<div class="row flex-horizontal-centered">
+			<agt-character-card *ngFor="let character of characterOptions"
+								(click)="selectCharacter(character)"
+								[style.padding.px]="20"
+								[character]="character">
+			</agt-character-card>
+		</div>
+	</div>
+
+	<button class="btn btn-danger"
+			(click)="cancelAddPlayer()">
+		Cancel
+	</button>
+</div>

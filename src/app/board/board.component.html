@@ -1,4 +1,11 @@
 <agt-board-deck-viewer></agt-board-deck-viewer>
 
+<agt-board-layout [style.margin-top.px]="200"
+				  [layout]="boardService.activeBoard">
+</agt-board-layout>
 
-<agt-player-select></agt-player-select>
+<agt-player-cards-viewer></agt-player-cards-viewer>
+
+<agt-character-select></agt-character-select>
+
+<agt-board-utilities></agt-board-utilities>

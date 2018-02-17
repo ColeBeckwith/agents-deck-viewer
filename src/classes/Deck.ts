@@ -26,11 +26,21 @@ export class Deck {
 		this.cards.unshift(card);
 	}
 
+	public shuffleAll() {
+		this.addDiscardToBottom();
+		this.shuffle();
+	}
+
 	public addDiscardToBottom(): void {
-		this.discardPile.forEach((card) => {
-			this.cards.push(card);
+		let tempDiscard = [];
+		this.discardPile.forEach((card: any) => {
+			if (card.undrawable) {
+				tempDiscard.push(card);
+			} else {
+				this.cards.push(card);
+			}
 		});
-		this.discardPile = [];
+		this.discardPile = tempDiscard;
 	}
 
 	public draw(): Card {
@@ -40,10 +50,30 @@ export class Deck {
 		}
 
 		if (this.cards.length === 0) {
-			console.error('No cards left to draw from:' + this.id)
+			console.error(`No card left to draw from ${this.cardType} Deck. Modifier ${this.modifier}`);
 		}
 
 		return this.cards.shift();
+	}
+
+	public drawByProperty(propertyName: string, property: any, discarded: boolean = false): Card {
+		for (let i = 0; i < this.cards.length; i++) {
+			let card = this.cards[i];
+			if (card[propertyName] === property) {
+				return this.cards.splice(i, 1)[0];
+			}
+		}
+
+		// Search even the discard pile.
+		if (discarded) {
+			for (let i = 0; i < this.cards.length; i++) {
+				let card = this.discardPile[i];
+				if (card[propertyName] === property) {
+					return this.discardPile.splice(i, 1)[0];
+				}
+			}
+		}
+		console.error(`Card with property ${propertyName}: ${property} was not found.`);
 	}
 
 	public discard(card: Card) {

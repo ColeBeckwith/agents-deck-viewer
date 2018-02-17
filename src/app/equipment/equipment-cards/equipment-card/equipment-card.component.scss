@@ -1,0 +1,28 @@
+.requirements {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 3px 0;
+
+	i {
+		margin: 0 5px;
+	}
+}
+
+.equipment-type {
+	position: absolute;
+	bottom: 5px;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+.equipment-cost {
+	position: absolute;
+	bottom: 5px;
+	right: 5px;
+}
+
+.equipped-text {
+	position: absolute;
+}

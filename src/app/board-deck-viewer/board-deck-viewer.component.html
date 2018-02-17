@@ -1,4 +1,0 @@
-<div class="agt-card-container deck-container" *ngFor="let deck of deckManager.decks">
-	<agt-ability-deck *ngIf="deck.cardType === 'Ability'" [deck]="deck"></agt-ability-deck>
-	<agt-encounter-deck *ngIf="deck.cardType === 'Encounter'" [deck]="deck"></agt-encounter-deck>
-</div>

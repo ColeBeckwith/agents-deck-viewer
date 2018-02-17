@@ -1,0 +1,53 @@
+<div class="agt-card"
+	 [class.bronze-loot-card]="card.rank === 1"
+	 [class.silver-loot-card]="card.rank === 2"
+	 [class.gold-loot-card]="card.rank === 3">
+
+	<ng-container *ngIf="!card.hidden">
+		<p class="agt-card-title text-center">{{ card.title }}</p>
+		<div class="agt-card-graphic"></div>
+
+		<ng-container *ngIf="card.skillCheck">
+			<div class="skill-check-container">
+				<div class="applicable-skills">
+					<div class="skill-bar combat"
+						 [class.applicable]="card.skillCheck.combatApplicable"></div>
+					<div class="skill-bar stealth"
+						 [class.applicable]="card.skillCheck.stealthApplicable"></div>
+					<div class="skill-bar magic"
+						 [class.applicable]="card.skillCheck.magicApplicable"></div>
+					<div class="skill-bar tech"
+						 [class.applicable]="card.skillCheck.techApplicable"></div>
+				</div>
+
+				<div class="skill-check-difficulty text-center">
+							<span>
+								<i class="fa fa-check-circle-o fa-fw"></i>{{ card.skillCheck.difficulty }}
+							</span>
+					<span *ngIf="card.skillCheck.luck">
+								<i class="ra ra-clovers luck-icon"></i>{{ card.skillCheck.luck }}
+							</span>
+				</div>
+
+				<p class="medium-text" [innerHtml]="'<b>Pass:</b> ' + card.skillCheck.successText"></p>
+				<p class="medium-text" [innerHtml]="'<b>Fail:</b> ' + card.skillCheck.failureText"></p>
+			</div>
+		</ng-container>
+
+		<p>{{ card.text }}</p>
+	</ng-container>
+
+	<div *ngIf="actions" class="actions">
+		<button *ngFor="let action of actions"
+				class="btn btn-info"
+				(click)="actionHandler.emit(action)">
+			{{ action }}
+		</button>
+	</div>
+
+	<ng-container *ngIf="card.hidden">
+		<div class="flex-all-centered">
+			<p class="large-text">LOOT</p>
+		</div>
+	</ng-container>
+</div>

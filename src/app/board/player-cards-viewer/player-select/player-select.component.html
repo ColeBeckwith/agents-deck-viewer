@@ -1,0 +1,11 @@
+<button *ngFor="let player of playerService.players; let i = index"
+		[style.margin-right.px]="15"
+		class="btn btn-lg btn-info"
+		(click)="selectPlayer(player)">
+	{{ player.character? player.character.name : 'Player ' + (i + 1)}}
+</button>
+<button class="btn btn-success"
+		(click)="playerService.addPlayer()">
+	Add Player
+</button>
+

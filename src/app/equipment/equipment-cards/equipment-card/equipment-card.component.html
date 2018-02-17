@@ -1,0 +1,49 @@
+<div class="agt-card agt-encounter-card">
+
+	<div class="actions" *ngIf="actions">
+		<button *ngFor="let action of actions"
+				class="btn btn-info"
+				(click)="actionHandler.emit(action)">
+			{{ action }}
+		</button>
+	</div>
+
+	<p class="agt-card-title text-center">{{ card.title }}</p>
+
+	<div class="agt-card-graphic"></div>
+
+	<div class="requirements">
+		<ng-container *ngIf="card.stealthRequired > 0">
+			{{ card.stealthRequired }} <i class="fa fa-eye"></i>
+		</ng-container>
+		<ng-container *ngIf="card.magicRequired > 0">
+			{{ card.magicRequired }} <i class="ra ra-flame-symbol"></i>
+		</ng-container>
+		<ng-container *ngIf="card.combatRequired">
+			{{ card.combatRequired }} <i class="ra ra-sword"></i>
+		</ng-container>
+		<ng-container *ngIf="card.techRequired">
+			{{ card.techRequired }} <i class="ra ra-cog"></i>
+		</ng-container>
+	</div>
+
+	<p class="medium-text">{{ card.text }}</p>
+
+	<div class="equipment-type">
+		<i *ngIf="card.type === 'Consumable'" class="ra ra-2x ra-corked-tube"></i>
+		<i *ngIf="card.type === 'Legs'" class="ra ra-2x ra-footprint"></i>
+		<i *ngIf="card.type === 'Arm'" class="ra ra-2x ra-hand"></i>
+		<i *ngIf="card.type === 'Head'" class="ra ra-2x ra-helmet"></i>
+		<span *ngIf="card.type === 'Training'">EXP</span>
+		<i *ngIf="card.type === 'Chest'" class="ra ra-2x ra-player"></i>
+	</div>
+
+	<div class="equipment-cost medium-text">
+		{{ card.cost }}
+	</div>
+</div>
+
+<div *ngIf="card.equipped" class="equipped-text">
+	Equipped
+</div>
+

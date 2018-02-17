@@ -1,7 +1,7 @@
 export default [
 	{
-		name: 'Oro Buro',
-		bio: 'An Argentinian from the Favela. One of the strongest known magic-users. A polarizing figure in South America where some consider him a terrorist and others a savior.',
+		name: 'Cane Burro',
+		bio: 'An Argentinian from the slums. One of the strongest known magic-users. A polarizing figure in South America where some consider him a terrorist and others a savior.',
 		specializations: ['m'],
 		startingStats: {
 			m: 2,
@@ -20,12 +20,12 @@ export default [
 				'Battle Mage: You may declare a Magic card as a Combat card with a value of 1.',
 				'',
 				'',
-				'Resurrection: Once per infiltration, you may restore 3 HP to a downed player.'
+				'Savior: Once per infiltration, you may restore 3 HP to a downed player.'
 			],
 			t: [],
 			s: [
 				'',
-				'Guerilla Fighter: Discard a stealth card and draw a combat card at any time.'
+				'Guerilla: Discard a stealth card and draw a combat card at any time.'
 			],
 			c: [
 				'',
@@ -53,7 +53,7 @@ export default [
 			m: [],
 			t: [
 				'',
-				''
+				'Ambidextrous: Equip up to two Arm Equipment pieces.'
 			],
 			s: [
 				'',
@@ -63,7 +63,7 @@ export default [
 				'',
 				'',
 				'Adrenaline Junkie: Draw two Combat cards when you pass a Skill Check.',
-				'Ambidextrous: Equip up to two Arm Equipment pieces.'
+				'Brute Force: Take 1 Damage and make your Combat cards applicable towards a Skill Check.'
 			]
 		}
 	},
@@ -162,9 +162,175 @@ export default [
 				'',
 				'',
 				'',
+				'Head Start: Start an Infiltration up to 5 spaces from any Starting Point.'
+			],
+			c: []
+		}
+	},
+	{
+		name: 'Tinker',
+		bio: 'A steampunk clad mech pilot. Tinker likes to let her inventions do the fighting for her.',
+		specializations: ['c', 't'],
+		startingStats: {
+			m: 0,
+			t: 1,
+			s: 0,
+			c: 1
+		},
+		maxStats: {
+			m: 0,
+			t: 4,
+			s: 0,
+			c: 4
+		},
+		skills: {
+			m: [],
+			t: [
+				'',
+				'',
+				'',
+				'Black Market Trader: Tinker can open a bid at half the listed price during the Black Market phase.'
+			],
+			s: [],
+			c: [
+				'',
+				'',
+				'Scrappy: For each point of Damage you take, draw a Combat card.',
+				''
+			]
+		}
+	},
+	{
+		name: 'Yuri Takashi',
+		bio: 'Yuri grew up in a wealthy family in Tokyo, who trained in the stealth arts in respect to their Ninja heritage. Rebelling against her conservative family and seeking a thrill, Yuri began using her training to steal from the other wealthy families. She eventually became one of the highest paid contractors for espionage missions.',
+		specializations: ['s'],
+		startingStats: {
+			m: 0,
+			t: 0,
+			s: 2,
+			c: 0
+		},
+		maxStats: {
+			m: 1,
+			t: 0,
+			s: 4,
+			c: 3
+		},
+		skills: {
+			m: [
+				''
+			],
+			t: [],
+			s: [
+				'',
+				'Light Feet: Yuri is not affected by Snare effects.',
+				'',
+				'Made in the Shade: Yuri may use her move action to move to the location of another Agent.'
+			],
+			c: [
+				'',
+				'',
+				'Assassin: If there are no players within 1 space of Yuri, reduce Skill Check difficulty by 7.'
+			]
+		}
+	},
+	{
+		name: 'Decker',
+		bio: 'A former MI6 agent. Decker was burned by the agency when she was no longer useful. After surviving the fallout, she turned to the highest bidder.',
+		specializations: ['c', 's'],
+		startingStats: {
+			m: 0,
+			t: 0,
+			s: 1,
+			c: 1
+		},
+		maxStats: {
+			m: 0,
+			t: 0,
+			s: 4,
+			c: 4
+		},
+		skills: {
+			m: [],
+			t: [],
+			s: [
+				'',
+				'Exiled: If you have less than 3 Favor, draw 2 extra Stealth cards each turn.',
+				'',
+				'Freedom: Decker may spend 15000 credits to get rid of her contract if she is not a DA.'
+			],
+			c: [
+				'',
+				'',
+				'Brawler: Decker gets +2 to rolls when in combat with another player.',
+				''
+			]
+		}
+	},
+	{
+		name: 'Slade',
+		bio: 'A detective working on a hunch that something is amiss at the Corporation.',
+		specializations: ['t', 's'],
+		startingStats: {
+			m: 0,
+			t: 1,
+			s: 1,
+			c: 0
+		},
+		maxStats: {
+			m: 0,
+			t: 4,
+			s: 4,
+			c: 0
+		},
+		skills: {
+			m: [],
+			t: [
+				'',
+				'',
+				'',
+				'Detective: When Slade first reaches this skill level, she may look at another player\'s Contract.'
+			],
+			s: [
+				'',
+				'',
+				'',
 				''
 			],
 			c: []
+		}
+	},
+	{
+		name: 'The Guardian',
+		bio: 'An animated set of armor.',
+		specializations: ['m', 'c'],
+		startingStats: {
+			m: 1,
+			t: 0,
+			s: 0,
+			c: 1
+		},
+		maxStats: {
+			m: 4,
+			t: 0,
+			s: 0,
+			c: 4
+		},
+		skills: {
+			m: [
+				'',
+				'',
+				'',
+				''
+			],
+			t: [],
+			s: [],
+			c: [
+				'',
+				'',
+				'',
+				'Armored: Reduce all incoming Damage by 1.'
+			]
 		}
 	}
 ]

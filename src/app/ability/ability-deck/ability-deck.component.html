@@ -1,0 +1,11 @@
+<div class="agt-card deck-back"
+	 [ngClass]="deck.modifier">
+	<h2>{{ deck.modifier }}</h2>
+
+	<div class="actions">
+		<button class="btn btn-info" (click)="addToHand()">Add to Hand</button>
+		<button class="btn btn-info" (click)="shuffleAll()">Shuffle</button>
+	</div>
+</div>
+
+<agt-deck-stats [deck]="deck"></agt-deck-stats>

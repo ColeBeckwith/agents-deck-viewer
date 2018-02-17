@@ -1,0 +1,46 @@
+@import '../../../../variables';
+
+.agt-ability-card {
+	height: 300px;
+
+	&.magic-ability-card {
+		border-color: $agt-magic;
+	}
+
+	&.stealth-ability-card {
+		border-color: $agt-stealth;
+	}
+
+	&.tech-ability-card {
+		border-color: $agt-tech;
+	}
+
+	&.combat-ability-card {
+		border-color: $agt-combat;
+	}
+
+	.agt-ability-card-value {
+		height: 32px;
+		width: 32px;
+		border-radius: 16px;
+		border: 1px solid black;
+		position: absolute;
+		top: 3px;
+		right: 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.agt-ability-card-text-block {
+		padding-top: 10px;
+	}
+}
+
+.card-marked {
+	width: 40px;
+	height: 40px;
+	border-radius: 20px;
+	position: absolute;
+	background-color: black;
+}

@@ -1,0 +1,57 @@
+<div class="agt-card agt-encounter-card"
+	 [class.green-encounter-card]="card.rank === 1"
+	 [class.yellow-encounter-card]="card.rank === 2"
+	 [class.red-encounter-card]="card.rank === 3"
+	 [class.black-encounter-card]="card.rank === 4">
+
+	<div class="actions" *ngIf="actions">
+		<button *ngFor="let action of actions"
+				class="btn btn-info"
+				(click)="actionHandler.emit(action)">
+			{{ action }}
+		</button>
+	</div>
+
+	<ng-container *ngIf="!card.hidden">
+		<p class="agt-card-title text-center">{{ card.title }}</p>
+		<div class="agt-card-graphic"></div>
+
+		<ng-container *ngIf="card.skillCheck">
+			<div class="skill-check-container">
+				<div class="applicable-skills">
+					<div class="skill-bar combat"
+						 [class.applicable]="card.skillCheck.combatApplicable"></div>
+					<div class="skill-bar stealth"
+						 [class.applicable]="card.skillCheck.stealthApplicable"></div>
+					<div class="skill-bar magic"
+						 [class.applicable]="card.skillCheck.magicApplicable"></div>
+					<div class="skill-bar tech"
+						 [class.applicable]="card.skillCheck.techApplicable"></div>
+				</div>
+
+				<div class="skill-check-difficulty text-center">
+							<span>
+								<i class="fa fa-check-circle-o fa-fw"></i>{{ card.skillCheck.difficulty }}
+							</span>
+					<span *ngIf="card.skillCheck.luck">
+								<i class="ra ra-clovers luck-icon"></i>{{ card.skillCheck.luck }}
+							</span>
+					<span *ngIf="card.skillCheck.optional">
+								<i class="fa fa-pause fa-fw"></i>
+							</span>
+				</div>
+
+				<p class="medium-text" [innerHtml]="'<b>Pass:</b> ' + card.skillCheck.successText"></p>
+				<p class="medium-text" [innerHtml]="'<b>Fail:</b> ' + card.skillCheck.failureText"></p>
+			</div>
+		</ng-container>
+
+		<p class="mediun-text" *ngIf="card.reveal"><b>Reveal:</b> {{ card.reveal }}</p>
+
+		<div class="snare" *ngIf="card.snare">
+			<i class="ra ra-2x ra-bear-trap"></i>
+		</div>
+
+		<p class="medium-text">{{ card.text }}</p>
+	</ng-container>
+</div>

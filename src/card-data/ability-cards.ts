@@ -30,30 +30,6 @@ export default [
 	},
 	{
 		type: 't',
-		value: 10,
-		title: 'Sky Hook',
-		discardText: 'Immediately leave the infiltration if an exit is possible.'
-	},
-	{
-		type: 't',
-		value: 2,
-		title: 'Generator',
-		deployText: 'Draw 4 Tech cards if you start your turn on this card.'
-	},
-	{
-		type: 't',
-		value: 1,
-		title: 'Recon Drone',
-		deployText: 'Move this drone one space each turn. It reveals the encounter card it is on.'
-	},
-	{
-		type: 't',
-		value: 4,
-		title: 'Teleporter',
-		deployText: 'Place this at your current location. At the beginning of any turn, you may instantly move to this location by discarding one Tech card.'
-	},
-	{
-		type: 't',
 		value: 4,
 		title: 'Active Camo',
 		skillCheckText: 'Use this card as a Tech or Stealth card.'
@@ -81,6 +57,12 @@ export default [
 		value: 8,
 		title: 'Facial Modulator',
 		discardText: 'Discard this card and the rest of your hand at the start of your turn. Play the rest of the turn as if you were a Double Agent.'
+	},
+	{
+		type: 't',
+		value: 1,
+		title: 'Statistical Analysis',
+		skillCheckText: 'Nullify any Luck affects.'
 	},
 	{
 		type: 'm',
@@ -143,12 +125,6 @@ export default [
 	},
 	{
 		type: 'm',
-		value: 5,
-		title: 'Blood Summon',
-		deployText: 'Take 2 damage. Move this card one space per turn. It can contribute 5 combat or magic points to any Skill Check at it\'s location, but cannot reveal or initiate a Skill Check.'
-	},
-	{
-		type: 'm',
 		value: 3,
 		title: 'Terraform',
 		discardText: 'Add an empty card next to any card on the board.'
@@ -181,12 +157,12 @@ export default [
 		type: 's',
 		value: 3,
 		title: 'Pickpocket',
-		skillCheckText: 'If you are successful, +500 credits',
+		skillCheckText: '+500 Credits on Pass.',
 	},
 	{
 		type: 's',
 		value: 6,
-		title: 'Heist',
+		title: 'Shoplift',
 		discardText: 'Automatically win priority on a Loot card you are standing on.'
 	},
 	{
@@ -194,6 +170,12 @@ export default [
 		value: 4,
 		title: 'Hidden Blade',
 		skillCheckText: 'This card can be played after all other cards and luck are totalled.'
+	},
+	{
+		type: 's',
+		value: 4,
+		title: 'Lucky Throw',
+		skillCheckText: '+1 Luck.'
 	},
 	{
 		type: 's',
@@ -209,20 +191,8 @@ export default [
 	},
 	{
 		type: 's',
-		value: 1,
-		title: 'Tiptoe',
-		discardText: 'Don\'t activate any Skill Checks for the rest of this turn.'
-	},
-	{
-		type: 's',
 		value: 2,
 		title: 'Sneak'
-	},
-	{
-		type: 's',
-		value: 3,
-		title: 'Decoy',
-		deployText: 'Any player who enters this space may choose not to initiate it\'s Skill Check.'
 	},
 	{
 		type: 's',
@@ -308,9 +278,9 @@ export default [
 	},
 	{
 		type: 'c',
-		value: 3,
+		value: -6,
 		title: 'Take Cover',
-		discardText: 'Prevent 1 incoming damage from any source.'
+		skillCheckText: 'Ignore any Health effects.'
 	},
 	{
 		type: 'c',
@@ -335,5 +305,11 @@ export default [
 		value: 5,
 		title: 'Bandages',
 		discardText: '+1 Health to any player at your current location.'
+	},
+	{
+		type: 'c',
+		value: 4,
+		title: 'Hostage',
+		skillCheckText: 'If you pass, keep this card to the side. Next time you would take Damage, discard this card instead.'
 	}
 ]

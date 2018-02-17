@@ -1,0 +1,48 @@
+<div class="container-fluid board-container" *ngIf="layout">
+	<div class="row">
+		<div class="col-12 board-row" *ngFor="let row of layout">
+			<div class="layout-card-container" *ngFor="let space of row">
+
+				<agt-marker-container [space]="space"></agt-marker-container>
+
+				<agt-encounter-card *ngIf="space.type === 'Encounter'"
+									[actions]="encounterActions"
+									(actionHandler)="handleAction($event, space)"
+									[card]="space.card">
+				</agt-encounter-card>
+
+				<div class="agt-card null-card" *ngIf="space.type === 'None'"></div>
+
+				<agt-card *ngIf="space.type === 'Entrance' || space.type === 'Exit'"
+						  [title]="space.type">
+					<div class="actions">
+						<button class="btn btn-info" (click)="placeCharacter(space)">
+							Place Character
+						</button>
+
+					</div>
+				</agt-card>
+				<agt-card *ngIf="space.type === 'Empty'">
+					<div class="actions">
+						<button class="btn btn-info" (click)="placeCharacter(space)">
+							Place Character
+						</button>
+						<h3>Place Encounter</h3>
+						<div class="btn-group">
+							<button *ngFor="let rank of [1, 2, 3, 4]"
+									(click)="placeEncounter(space, rank)"
+									class="btn btn-info">
+								{{ rank }}
+							</button>
+						</div>
+					</div>
+				</agt-card>
+				<agt-loot-card *ngIf="space.type === 'Loot'"
+							   [card]="space.card"
+							   [actions]="lootActions"
+							   (actionHandler)="handleAction($event, space)">
+				</agt-loot-card>
+			</div>
+		</div>
+	</div>
+</div>

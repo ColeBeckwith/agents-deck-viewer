@@ -1,0 +1,45 @@
+<agt-player-select></agt-player-select>
+
+<ng-container *ngIf="playerService.activePlayer" class="container-fluid">
+	<div class="row" [style.padding.px]="15">
+		<div class="btn-group btn-group-vertical">
+			<button class="btn btn-info"
+					[class.active]="activeCards === 'Ability'"
+					(click)="activeCards = 'Ability'">
+				Ability Cards
+			</button>
+			<button class="btn btn-info"
+					[class.active]="activeCards === 'Equipment'"
+					(click)="activeCards = 'Equipment'">Equipment Cards
+			</button>
+			<button class="btn btn-warning" (click)="hide()">Hide</button>
+		</div>
+
+		<div class="card-container">
+			<agt-character-card *ngIf="playerService.activePlayer.character"
+								[interactive]="true"
+								[character]="playerService.activePlayer.character">
+			</agt-character-card>
+		</div>
+
+		<div class="card-wheel">
+
+			<ng-container *ngIf="activeCards === 'Ability'">
+				<agt-ability-card *ngFor="let abilityCard of playerService.activePlayer.abilityCards; let i = index"
+								  (actionHandler)="handleCardAction($event, abilityCard, i)"
+								  [actions]="abilityCardActions"
+								  [card]="abilityCard">
+				</agt-ability-card>
+			</ng-container>
+
+			<ng-container *ngIf="activeCards === 'Equipment'">
+				<agt-equipment-card *ngFor="let equipmentCard of playerService.activePlayer.equipmentCards; let i = index"
+									(actionHandler)="handleCardAction($event, equipmentCard, i)"
+									[actions]="equipmentCardActions"
+									[card]="equipmentCard">
+				</agt-equipment-card>
+			</ng-container>
+		</div>
+	</div>
+
+</ng-container>

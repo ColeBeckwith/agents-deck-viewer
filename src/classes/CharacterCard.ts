@@ -46,14 +46,16 @@ export class CharacterCard extends Card {
 	stats: Stats;
 	health: number;
 	favor: number;
+	credits: number;
 
 	constructor(data) {
 		super(data);
 
 		this.name = data.name;
 		this.bio = data.bio;
-		this.health = 15;
+		this.health = data.startingStats.health || 15;
 		this.favor = 3;
+		this.credits = data.startingStats.credits || 0;
 
 		this.stats = buildStats(data);
 	}

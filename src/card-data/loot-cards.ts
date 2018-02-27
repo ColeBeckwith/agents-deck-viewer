@@ -1,4 +1,7 @@
 export default [
+
+	// GOLD
+
 	{
 		title: 'Charlie\'s Unicorn',
 		rank: 3,
@@ -12,7 +15,7 @@ export default [
 	{
 		title: 'Executive Safe',
 		rank: 3,
-		text: 'Earn 3500 credits.'
+		text: 'Earn 35 credits.'
 	},
 	{
 		title: 'Junk Food Night',
@@ -23,6 +26,24 @@ export default [
 		title: 'Broken ATM',
 		rank: 3,
 		text: 'Double your credits.'
+	},
+	{
+		title: 'Guru',
+		rank: 3,
+		text: 'Draw a Training card of your choice.'
+	},
+	{
+		title: 'Fire Sale',
+		rank: 3,
+		text: 'Draw the top 5 cards. Purchase any of them at half off.'
+	},
+
+	// SILVER
+
+	{
+		title: 'Magic Bag',
+		rank: 2,
+		text: 'Draw the top 4 cards. Keep any of them that have a Magic requirement.'
 	},
 	{
 		title: 'R&D Lab',
@@ -42,24 +63,24 @@ export default [
 			luck: 4,
 			difficulty: 8,
 			applicableSkills: ['m', 's'],
-			successText: 'You manage to steal the valuable eggs. Gain 3000 credits.',
+			successText: 'You manage to steal the valuable eggs. Gain 30 credits.',
 			failureText: 'You\'ve alerted their mother. Replace this card with "Gadot". If she\'s already in play, replace it with any Rank 4 card.'
 		}
 	},
 	{
 		title: 'Safe',
 		rank: 2,
-		text: 'Earn 1500 credits.'
+		text: 'Earn 15 credits.'
 	},
 	{
 		title: 'Gecko',
 		rank: 2,
-		text: 'Gecko is a bio-tech expert with a questionable morale compass. He\'ll install after-market upgrades for the right price. For 3000 credits, +1 Tech, draw a Tech 2+ card.'
+		text: 'Gecko is a bio-tech expert with a questionable morale compass. He\'ll install after-market upgrades for the right price. For 10 credits, +1 Tech Level, draw a Tech 2+ card.'
 	},
 	{
 		title: 'Arm and a Leg',
 		rank: 2,
-		text: 'Take 3 Damage. Draw an equipment card with a cost greater than or equal to 2000.'
+		text: 'Take 3 Damage. Draw an equipment card with a cost greater than or equal to 20.'
 	},
 	{
 		title: 'Armory',
@@ -72,14 +93,27 @@ export default [
 		text: 'Draw the top card.'
 	},
 	{
-		title: 'Dojo',
+		title: 'Library',
 		rank: 2,
+		text: 'Spend your next turn studying. Take no actions. Draw a Training card. This card can be used twice.'
+	},
+
+	// BRONZE
+
+	{
+		title: 'Rigged Safe',
+		rank: 1,
+		text: 'Take 1 Damage. +8 Credits.'
+	},
+	{
+		title: 'Dojo',
+		rank: 1,
 		text: 'Draw a Training card.'
 	},
 	{
 		title: 'Meditation Chambers',
 		rank: 1,
-		text: 'At the end of this round anyone who is on this card begins meditation. Discard all ability cards. Turn this card sideways. Do not draw any ability cards next round. At the end of the next round, remove this card and +1 to any stat up to a maximum of 1. If any other players enter this card while you are meditating immediately discard it and do not gain a Skill point.'
+		text: 'At the end of this round anyone who is on this card begins meditation. Discard all ability cards. Turn this card sideways. Do not draw any ability cards next round. At the end of the next round, remove this card and +1 to any stat up to a maximum of 1. If any other Player enter this card while you are meditating immediately discard it and do not gain a Skill point.'
 	},
 	{
 		title: 'Slot Machine',
@@ -94,6 +128,16 @@ export default [
 	{
 		title: 'Payday',
 		rank: 1,
-		text: 'Earn 500 Credits.'
+		text: '+5 Credits.'
+	},
+	{
+		title: 'Medical Tent',
+		rank: 1,
+		text: '+1 Health to all occupants at the end of the round. Remove this card.'
+	},
+	{
+		title: 'Black Ball',
+		rank: 1,
+		text: 'Declare an Equipment type. If the top card of the Equipment deck is of that type, keep it. Repeat until you guess incorrectly.'
 	}
 ]

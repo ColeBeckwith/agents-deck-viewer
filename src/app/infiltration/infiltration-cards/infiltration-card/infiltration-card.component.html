@@ -1,0 +1,9 @@
+<div class="agt-card agt-infiltration-card">
+	<p class="agt-card-title text-center">{{ card.title }}</p>
+
+	<div class="board-base-setup">
+		<div class="board-row" *ngFor="let row of card.board">
+			<div class="board-cell" *ngFor="let cell of row" [ngClass]="cell.type + (cell.rank ? '-' + cell.rank : '')"></div>
+		</div>
+	</div>
+</div>

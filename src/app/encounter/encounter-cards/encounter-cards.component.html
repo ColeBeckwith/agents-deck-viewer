@@ -1,20 +1,23 @@
-<div class="container">
-	<p>Magic - Total: {{ totalMagicApplicable }}</p>
-	<p>Tech - Total: {{ totalTechApplicable }}</p>
-	<p>Combat - Total: {{ totalCombatApplicable }}</p>
-	<p>Stealth - Total: {{ totalStealthApplicable }}</p>
+<div class="stats-container flex-all-centered">
+	<div class="container">
+		<p>Magic - Total: {{ totalMagicApplicable }}</p>
+		<p>Tech - Total: {{ totalTechApplicable }}</p>
+		<p>Combat - Total: {{ totalCombatApplicable }}</p>
+		<p>Stealth - Total: {{ totalStealthApplicable }}</p>
+	</div>
+
+	<div class="container" *ngFor="let stat of [rank1Stats, rank2Stats, rank3Stats, rank4Stats]; let i = index">
+		<h4>Rank {{ i + 1 }}</h4>
+		<p>Total: {{ stat.totalCards }}</p>
+		<p>Total Skill Checks: {{ stat.totalSkillChecks }}</p>
+		<p>Average Difficulty: {{ stat.averageDifficulty }}</p>
+		<p>Magic - Total: {{ stat.totalMagicApplicable }}</p>
+		<p>Tech - Total: {{ stat.totalTechApplicable }}</p>
+		<p>Combat - Total: {{ stat.totalCombatApplicable }}</p>
+		<p>Stealth - Total: {{ stat.totalStealthApplicable }}</p>
+	</div>
 </div>
 
-<div class="container" *ngFor="let stat of [rank1Stats, rank2Stats, rank3Stats, rank4Stats]; let i = index">
-	<h4>Rank {{ i + 1 }}</h4>
-	<p>Total: {{ stat.totalCards }}</p>
-	<p>Total Skill Checks: {{ stat.totalSkillChecks }}</p>
-	<p>Average Difficulty: {{ stat.averageDifficulty }}</p>
-	<p>Magic - Total: {{ stat.totalMagicApplicable }}</p>
-	<p>Tech - Total: {{ stat.totalTechApplicable }}</p>
-	<p>Combat - Total: {{ stat.totalCombatApplicable }}</p>
-	<p>Stealth - Total: {{ stat.totalStealthApplicable }}</p>
-</div>
 
 <div class="container">
 	<div class="row">

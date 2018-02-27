@@ -1,0 +1,9 @@
+<div class="card-pool-container">
+	<div class="card-container" *ngFor="let card of deckManager.pool">
+		<agt-equipment-card *ngIf="card.cardType === 'Equipment'"
+							[actions]="['Draw', 'Discard']"
+							(actionHandler)="handleAction($event, card)"
+							[card]="card">
+		</agt-equipment-card>
+	</div>
+</div>

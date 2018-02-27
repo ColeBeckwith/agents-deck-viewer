@@ -1,3 +1,23 @@
+<div class="stats-container flex-all-centered">
+	<div class="container">
+		<h4>Total</h4>
+		<p>Cards: {{ stats.totalCards }}</p>
+		<p>Magic - Total: {{ stats.totalMagicCards }}</p>
+		<p>Tech - Total: {{ stats.totalTechCards }}</p>
+		<p>Combat - Total: {{ stats.totalCombatCards }}</p>
+		<p>Stealth - Total: {{ stats.totalStealthCards }}</p>
+	</div>
+
+	<div class="container" *ngFor="let stat of ['Head', 'Arm', 'Legs', 'Chest', 'Consumable', 'Training']; let i = index">
+		<h4>{{ stat }}</h4>
+		<p>Total: {{ stats[stat].totalCards }}</p>
+		<p>Magic - Total: {{ stats[stat].totalMagicCards }}</p>
+		<p>Tech - Total: {{ stats[stat].totalTechCards }}</p>
+		<p>Combat - Total: {{ stats[stat].totalCombatCards }}</p>
+		<p>Stealth - Total: {{ stats[stat].totalStealthCards }}</p>
+	</div>
+</div>
+
 <div class="container">
 	<div class="row">
 		<div class="col-lg-4 col-md-6 agt-card-container"

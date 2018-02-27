@@ -35,8 +35,11 @@ import { EquipmentDeckComponent } from './equipment/equipment-deck/equipment-dec
 import { AftermathCardsComponent } from './aftermath/aftermath-cards/aftermath-cards.component';
 import { AftermathCardComponent } from './aftermath/aftermath-cards/aftermath-card/aftermath-card.component';
 import { CardComponent } from './card/card.component';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { CardinalSpinnerComponent } from './board/board-utilities/cardinal-spinner/cardinal-spinner.component';
+import { InfiltrationCardsComponent } from './infiltration/infiltration-cards/infiltration-cards.component';
+import { InfiltrationCardComponent } from './infiltration/infiltration-cards/infiltration-card/infiltration-card.component';
+import { CardPoolComponent } from './card-pool/card-pool.component';
 
 @NgModule({
 	declarations: [
@@ -69,6 +72,10 @@ import { FormsModule } from '@angular/forms';
 		AftermathCardsComponent,
 		AftermathCardComponent,
 		CardComponent,
+		CardinalSpinnerComponent,
+		InfiltrationCardsComponent,
+		InfiltrationCardComponent,
+		CardPoolComponent,
 	],
 	imports: [
 		BrowserModule,
@@ -81,6 +88,7 @@ import { FormsModule } from '@angular/forms';
 				{ path: 'character-cards', component: CharacterCardsComponent },
 				{ path: 'loot-cards', component: LootCardsComponent },
 				{ path: 'equipment-cards', component: EquipmentCardsComponent },
+				{ path: 'infiltration-cards', component: InfiltrationCardsComponent },
 				{ path: 'game', component: BoardComponent }
 			]
 		)

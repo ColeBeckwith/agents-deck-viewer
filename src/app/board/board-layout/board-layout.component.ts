@@ -22,6 +22,10 @@ export class BoardLayoutComponent implements OnInit {
 	}
 
 	handleAction(actionType, space: BoardSpace) {
+		if (actionType === 'Place Character') {
+			this.placeCharacter(space);
+		}
+
 		if (actionType === 'Remove') {
 			this.deckManager.discardCard(space.card);
 			space.type = 'Empty';

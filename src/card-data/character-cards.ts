@@ -7,7 +7,9 @@ export default [
 			m: 2,
 			t: 0,
 			s: 0,
-			c: 0
+			c: 0,
+			health: 20,
+			credits: 8
 		},
 		maxStats: {
 			m: 4,
@@ -42,6 +44,8 @@ export default [
 			t: 0,
 			s: 0,
 			c: 2,
+			health: 25,
+			credits: 15
 		},
 		maxStats: {
 			m: 0,
@@ -75,7 +79,9 @@ export default [
 			m: 0,
 			t: 2,
 			s: 0,
-			c: 0
+			c: 0,
+			health: 12,
+			credits: 25
 		},
 		maxStats: {
 			m: 0,
@@ -109,7 +115,9 @@ export default [
 			m: 1,
 			t: 1,
 			s: 0,
-			c: 0
+			c: 0,
+			health: 14,
+			credits: 0
 		},
 		maxStats: {
 			m: 4,
@@ -142,7 +150,9 @@ export default [
 			m: 1,
 			t: 0,
 			s: 1,
-			c: 0
+			c: 0,
+			health: 20,
+			credits: 2
 		},
 		maxStats: {
 			m: 4,
@@ -175,7 +185,9 @@ export default [
 			m: 0,
 			t: 1,
 			s: 0,
-			c: 1
+			c: 1,
+			health: 10,
+			credits: 10
 		},
 		maxStats: {
 			m: 0,
@@ -189,7 +201,7 @@ export default [
 				'',
 				'',
 				'',
-				'Black Market Trader: Tinker can open a bid at half the listed price during the Black Market phase.'
+				'Black Market Trader: Tinker can open a bid at 200 less than the listed price during the Black Market phase.'
 			],
 			s: [],
 			c: [
@@ -208,7 +220,9 @@ export default [
 			m: 0,
 			t: 0,
 			s: 2,
-			c: 0
+			c: 0,
+			health: 13,
+			credits: 20
 		},
 		maxStats: {
 			m: 1,
@@ -242,7 +256,9 @@ export default [
 			m: 0,
 			t: 0,
 			s: 1,
-			c: 1
+			c: 1,
+			health: 18,
+			credits: 3
 		},
 		maxStats: {
 			m: 0,
@@ -275,7 +291,9 @@ export default [
 			m: 0,
 			t: 1,
 			s: 1,
-			c: 0
+			c: 0,
+			health: 10,
+			credits: 18
 		},
 		maxStats: {
 			m: 0,
@@ -308,7 +326,9 @@ export default [
 			m: 1,
 			t: 0,
 			s: 0,
-			c: 1
+			c: 1,
+			health: 30,
+			credits: 0
 		},
 		maxStats: {
 			m: 4,
@@ -321,7 +341,7 @@ export default [
 				'',
 				'',
 				'',
-				''
+				'Foresight: When the Guardian activates a Loot card, he may look at the top 6 cards of the Equipment deck and rearrange them.'
 			],
 			t: [],
 			s: [],

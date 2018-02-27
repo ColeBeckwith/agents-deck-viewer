@@ -7,6 +7,7 @@ export class AbilityCard extends Card {
 	discardText: string;
 	skillCheckText: string;
 	deployText: string;
+	count: number;
 
 	typeMappings = {
 		t: 'Tech',
@@ -18,6 +19,7 @@ export class AbilityCard extends Card {
 	constructor(data) {
 		super(data);
 
+		this.count = data.count;
 		this.type = this.typeMappings[data.type];
 		this.value = data.value;
 		this.title = data.title;

@@ -51,10 +51,15 @@
 	}
 }
 
-.health-and-favor {
+.health-favor-credits {
 	position: absolute;
 	top: 5px;
 	right: 5px;
+	display: flex;
+
+	span {
+		padding-left: 30px;
+	}
 }
 
 .equipment-slots {

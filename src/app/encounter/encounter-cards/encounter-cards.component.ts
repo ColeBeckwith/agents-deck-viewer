@@ -81,6 +81,10 @@ export class EncounterCardsComponent implements OnInit {
 
 	buildStats() {
 		this.encounterCards.forEach((card) => {
+			if (card.title === 'Doomsday') {
+				// This throws off averages, so ignore it.
+				return;
+			}
 			let stats = this[`rank${card.rank}Stats`];
 			stats.totalCards++;
 

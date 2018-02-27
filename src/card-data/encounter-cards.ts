@@ -33,7 +33,7 @@ export default [
 			luck: 1,
 			difficulty: 25,
 			applicableSkills: ['s'],
-			successText: 'The valuables have been secured. +2000 Credits.',
+			successText: 'The valuables have been secured. +20 Credits.',
 			failureText: 'We only had one shot at this. Remove this card.'
 		}
 	},
@@ -231,7 +231,7 @@ export default [
 			successText: 'The Seeker is defeated.',
 			failureText: 'The Seeker pinpoints the location of all Agents. All Agents discard all Stealth ability cards.'
 		},
-		revealText: 'The Seeker relays Agent locations to other Corporation units. All Stealth cards have an effective base value of 0.'
+		revealText: 'The Seeker relays Agent locations to other Corporation units. All Stealth cards have a Base Value of 0.'
 	},
 	{
 		title: 'Black ICE',
@@ -252,9 +252,66 @@ export default [
 			luck: 2,
 			difficulty: 20,
 			applicableSkills: ['m', 'c'],
-			successText: 'Discard 5 points of Tech, to distill an antivenom. All Agent\'s Poison effects are cured.',
+			successText: 'Discard 4 points of Tech to distill an antivenom and cure all Agent\'s Poison effects.',
 			failureText: 'Ezra\'s venom courses through you. Take 1 point of Poison.'
 		}
+	},
+	{
+		title: 'Hydra',
+		rank: 4,
+		skillCheck: {
+			luck: 3,
+			difficulty: 20,
+			applicableSkills: ['c', 'm'],
+			successText: 'The Hydra regenerates. Increase this cards difficulty by 10.',
+			failureText: 'Take 2 Damage.'
+		}
+	},
+	{
+		title: 'Signal Interceptor',
+		rank: 4,
+		skillCheck: {
+			luck: 1,
+			difficulty: 24,
+			applicableSkills: ['t'],
+			successText: 'The interceptor is shut down. Comms are clear.',
+			failureText: 'Alert Counter -1.'
+		},
+		revealText: 'Each round that an Agent speaks, Alert Counter -1.'
+	},
+	{
+		title: 'Dwarf Tank',
+		rank: 4,
+		skillCheck: {
+			luck: 2,
+			difficulty: 28,
+			applicableSkills: ['t', 'c', 's'],
+			successText: 'The Tank is destroyed. Replace this card with \'Seven Dwarves\' if it is not already in play.',
+			failureText: 'Take 2 Damage.'
+		}
+	},
+	{
+		title: 'Space Cowboy',
+		rank: 3,
+		skillCheck: {
+			luck: 2,
+			difficulty: 20,
+			applicableSkills: ['t', 's', 'c'],
+			successText: 'See you Space Cowboy... +5 Credits.',
+			failureText: '-10 Credits.'
+		}
+	},
+	{
+		title: 'Orc Chieftain',
+		rank: 3,
+		skillCheck: {
+			luck: 2,
+			difficulty: 20,
+			applicableSkills: ['m', 'c', 's'],
+			successText: 'The Orc Chieftain finds you unworthy of chase.',
+			failureText: 'Take 2 Damage. The Chieftain damages your gear. You may not use Equipment abilities for the rest of the Infiltration.'
+		},
+		text: 'No Equipment abilities may be used on this Skill Check.'
 	},
 	{
 		title: '2 Ton Jack',
@@ -264,7 +321,7 @@ export default [
 			difficulty: 20,
 			applicableSkills: ['s', 'c'],
 			successText: 'The 4000 pound Gorilla has met its match.',
-			failure: 'Jack throws you back. Move 5 spaces in the direction that you came from. Ignore snare effects. If you reach a barrier, take 1 Damage for each space you did not move.'
+			failureText: 'Jack throws you back. Move 5 spaces in the direction that you came from. Ignore snare effects. If you reach a barrier, take 1 Damage for each space you did not move.'
 		}
 	},
 	{
@@ -277,7 +334,7 @@ export default [
 			successText: 'The Armistice ends.',
 			failureText: 'The Armistice stands. Discard all Combat cards.'
 		},
-		revealText: 'Combat discard effects may not be used, and no Combat cards can be played except on this card.'
+		revealText: 'No Combat cards can be played except on this card.'
 	},
 	{
 		title: 'Torture Chamber',
@@ -366,7 +423,7 @@ export default [
 			difficulty: 20,
 			applicableSkills: ['m', 't', 'c', 's'],
 			successText: 'Enemy reinforcements have been cut off.',
-			failureText: ''
+			failureText: 'Enemy reinforcements strengthen. +10 to adjacent Skill Checks instead of 5.'
 		},
 		revealText: 'Each adjacent Skill Check has +5 difficulty.'
 	},
@@ -382,14 +439,36 @@ export default [
 		}
 	},
 	{
+		title: 'Magic Radiation',
+		rank: 3,
+		skillCheck: {
+			luck: 1,
+			difficulty: 14,
+			applicableSkills: ['m'],
+			successText: 'You absorb the radiation. Take 1 Damage. The highest contributor may optionally remove this card. If you initiate this Skill Check 3 turns in a row, gain 1 Magic Point. Remove this card after a player has gained a Magic Point from it.',
+			failureText: 'If you have 0 Magic Points, treat this as a success instead. Take 3 Damage.'
+		}
+	},
+	{
+		title: 'Nuclear Radiation',
+		rank: 3,
+		skillCheck: {
+			difficulty: 16,
+			applicableSkills: ['m', 't'],
+			successText: 'You resist the radiation.',
+			failureText: 'You become irradiated. Gain 2 Points of Poison. Reduce the difficulty of all Skill Checks you are on by 6.'
+		}
+	},
+	{
 		title: 'Tree of Death',
 		rank: 3,
 		skillCheck: {
 			difficulty: 13,
 			applicableSkills: ['m', 'c'],
 			successText: 'The tree is destroyed.',
-			failureText: 'Immediately take 1 damage. Card remains on board. Any time an Agent enters an adjacent space, take 1 damage.'
-		}
+			failureText: 'Take 1 Damage.'
+		},
+		revealText: 'Any time an Agent enters this space or an adjacent one, take 1 Damage.'
 	},
 	{
 		title: 'Hell Dogs',
@@ -418,7 +497,7 @@ export default [
 			difficulty: 5,
 			applicableSkills: [],
 			successText: 'Good Luck.',
-			failureText: '-2 Health. Remove this card.'
+			failureText: 'Take 2 Damage. Remove this card.'
 		}
 	},
 	{
@@ -453,6 +532,17 @@ export default [
 		count: 2
 	},
 	{
+		title: 'Compactor',
+		rank: 3,
+		skillCheck: {
+			difficulty: 20,
+			applicableSkills: ['s', 't', 'm'],
+			successText: 'You escape the compactor. Ignore this cards snare effect on your next turn. Do not remove this card.',
+			failureText: 'The gears crank as the compactor compresses everything inside. The third time this Skill Check is failed, all occupants are reduced to 0 Health. Remove this card.'
+		},
+		snare: true
+	},
+	{
 		title: 'Sonar Drone',
 		rank: 3,
 		skillCheck: {
@@ -460,7 +550,8 @@ export default [
 			applicableSkills: ['s', 't'],
 			successText: 'If more than half of contributed points were Tech, reveal surrounding cards.',
 			failureText: 'Alert Counter -1 for each player within two spaces of this card.'
-		}
+		},
+		revealText: 'Alert Counter -1 for each player within one space of this card.'
 	},
 	{
 		title: 'Chopper Gunner',
@@ -469,7 +560,7 @@ export default [
 			difficulty: 18,
 			applicableSkills: ['t', 'c'],
 			successText: 'The Chopper goes down with a crash. -1 Alert Counter.',
-			failureText: 'A hail of bullets rain down on you. -2 Health.'
+			failureText: 'A hail of bullets rain down on you. Take 2 Damage.'
 		}
 	},
 	{
@@ -479,7 +570,7 @@ export default [
 			difficulty: 18,
 			applicableSkills: ['m', 'c'],
 			successText: 'You defeat the Troll, but not before he encases your legs in ice. You cannot move next turn.',
-			failureText: 'The cold intensifies. -1 Health if you are within X number of spaces where X is the number of times this card has been failed.'
+			failureText: 'The cold intensifies. Take 1 Damage if you are within X number of spaces where X is the number of times this card has been failed.'
 		}
 	},
 	{
@@ -489,8 +580,13 @@ export default [
 			difficulty: 20,
 			applicableSkills: ['m', 'c'],
 			successText: 'The Troll grows tired of fighting and retreats to his slumber.',
-			failureText: 'The Troll swings his club. -3 Health.'
+			failureText: 'The Troll swings his club. Take 3 Damage.'
 		}
+	},
+	{
+		title: 'EMP Supernova',
+		rank: 3,
+		revealText: 'If a player is standing on this card, all players must discard all Tech ability cards and unequip any equipment with a Tech requirement. Remove this card.'
 	},
 	{
 		title: 'Topsy and Turvy',
@@ -505,6 +601,28 @@ export default [
 		text: 'After players are done contributing cards, roll a D6. If the result is odd, Magic and Combat count as applicable. If the result is even Stealth and Tech count as applicable.',
 	},
 	{
+		title: 'Uruk',
+		rank: 3,
+		skillCheck: {
+			luck: 1,
+			difficulty: 15,
+			applicableSkills: ['m', 'c', 's'],
+			successText: 'Draw Bite of Uruk from the Equipment deck if it is available.',
+			failureText: 'Take 1 Damage. Draw Bite of Uruk from teh Equipment deck. Equip it immediately. You may not unequip it.'
+		}
+	},
+	{
+		title: 'Summoner',
+		rank: 3,
+		skillCheck: {
+			difficulty: 14,
+			applicableSkills: ['m'],
+			successText: 'The summoner is stopped before she has a chance to perform her ritual.',
+			failureText: 'Replace this card with a Rank 2 Encounter card. Replace each adjacent Encounter with one equal to its rank +1.'
+		},
+		revealText: 'If this card is still on the board at the end of the round, treat it as if the Skill Check is failed.'
+	},
+	{
 		title: 'Balancing Act',
 		rank: 3,
 		skillCheck: {
@@ -512,66 +630,47 @@ export default [
 			difficulty: 6,
 			applicableSkills: ['m', 's'],
 			successText: 'If the total contributed is more than 10, consider this Skill Check failed.',
-			failureText: 'You fall to the ground below and sprain an ankle. -1 Health and lose next movement.'
+			failureText: 'You fall to the ground below and sprain an ankle. Take 1 Damage and lose next movement.'
 		}
 	},
 	{
-		title: 'Dirty Cop',
-		rank: 2,
+		title: 'Lockdown',
+		rank: 3,
 		skillCheck: {
-			difficulty: 18,
-			applicableSkills: ['c', 's'],
-			successText: 'The Cop buggers off to extort someone else.',
-			failureText: 'Alert Counter -1. You may spend 500 credits to count this as a success instead.'
-		}
+			luck: 2,
+			difficulty: 10,
+			applicableSkills: ['t', 's'],
+			successText: 'Remove this card.',
+			failureText: 'Alert Counter -1.'
+		},
+		revealText: 'No player may exit the infiltration until this card is removed.'
 	},
 	{
-		title: 'Pools of Jibwa',
-		rank: 2,
-		text: 'Whenever you start a turn on this card, draw 3 Magic Ability cards. If your magic stat is less than 3, take 1 Damage.'
-	},
-	{
-		title: 'Tree of Life',
-		rank: 2,
+		title: 'Neon Demon',
+		rank: 3,
 		skillCheck: {
-			difficulty: 14,
-			applicableSkills: ['m'],
-			successText: 'The tree restores 2 health to all players within 2 spaces.',
-			failureText: 'The tree withers. Remove this card.',
-			optional: true
-		}
-	},
-	{
-		title: 'Magic Rift',
-		rank: 2,
-		text: 'If your magic stat is 2+ you may pass through this card as if it were empty. Otherwise, take 2 damage whenever you enter this card, regardless of whether or not it was revealed when you entered.'
-	},
-	{
-		title: 'Anti-Magic Barrier',
-		rank: 2,
-		text: 'If your magic stat is 2+, take 3 damage when you leave this card. Do not take damage if you leave from the direction you entered.'
-	},
-	{
-		title: 'Laser Matrix',
-		rank: 2,
-		skillCheck: {
-			luck: 1,
-			difficulty: 7,
-			applicableSkills: ['s', 't'],
-			successText: 'If you pass with 4 or more Tech points, the lasers are disarmed. Remove the card. Otherwise, the card stays on the board.',
-			failureText: 'Alert Counter -1'
-		}
-	},
-	{
-		title: 'Security Office',
-		rank: 2,
-		skillCheck: {
-			luck: 1,
+			luck: 2,
 			difficulty: 16,
-			applicableSkills: ['s', 't', 'm', 'c'],
-			successText: 'The Security Office is overtaken. Alert Counter +3.',
-			failureText: 'An alarm sounds. Add one rank 2 card to the nearest empty space. Alert Counter -2.'
+			applicableSkills: ['t', 'm'],
+			successText: 'The Demon is subdued. Replace this card with \'Neon Imp\' if it\'s not in play. Otherwise remove this card.',
+			failureText: 'Take 2 Damage.'
 		}
+	},
+	{
+		title: 'Nanomachines',
+		rank: 3,
+		skillCheck: {
+			luck: 1,
+			difficulty: 15,
+			applicableSkills: ['t'],
+			successText: 'The Nanomachines are under your control. Draw 2 Tech cards.',
+			failureText: 'The Nanomachines corrupt your equipment. Discard all Equipment with a Tech requirement.'
+		}
+	},
+	{
+		title: 'Ice Wall',
+		rank: 3,
+		revealText: 'Any player on this space is frozen and cannot move off of it. No player may move onto this card. At the end of each turn, the most recently placed version of this card spreads in a random direction. If that card is not already an Ice Wall, make it one. This card and every version of it can be removed at any time by discarding one of the following cards while standing on the wall or adjacent to it: \'Inferno\', \'Flames\' or \'Frag Grenade\''
 	},
 	{
 		title: 'Stairs Up',
@@ -588,16 +687,128 @@ export default [
 		count: 2
 	},
 	{
-		title: 'Lockdown',
+		title: 'Seven Dwarves',
 		rank: 2,
 		skillCheck: {
-			luck: 2,
-			difficulty: 10,
-			applicableSkills: ['t', 's'],
-			successText: 'Remove this card.',
-			failureText: 'Alert Counter -1.'
+			luck: 7,
+			difficulty: 7,
+			applicableSkills: ['c', 't', 's'],
+			successText: 'The Dwarves scatter.',
+			failureText: 'Take 1 Damage.'
+		}
+	},
+	{
+		title: 'Neon Imp',
+		rank: 2,
+		skillCheck: {
+			luck: 1,
+			difficulty: 11,
+			applicableSkills: ['t', 'm'],
+			successText: 'The Demon is defeated. Draw a Tech or a Magic card.',
+			failureText: 'The Demon draws energy. Discard 2 cards. This card is replaced with \'Neon Demon\' if it is not in play.'
+		}
+	},
+	{
+		title: 'Mr. Elusive',
+		rank: 2,
+		skillCheck: {
+			luck: 3,
+			difficulty: 5,
+			applicableSkills: ['m', 't', 's'],
+			successText: 'He\'s finally been captured.',
+			failureText: 'Mr. Elusive flees to the furthest empty space.'
 		},
-		revealText: 'No player may exit the infiltration until this card is removed.'
+		revealText: 'Mr. Elusive immediately moves to the furthest empty space. All players draw 1 fewer Stealth card during a Draw Cards Phase.'
+	},
+	{
+		title: 'Witch',
+		rank: 2,
+		skillCheck: {
+			luck: 1,
+			difficulty: 9,
+			applicableSkills: ['m', 's'],
+			successText: 'The Witch mutters something as you pass, but she\'s uninterested',
+			failureText: 'You\'ve aggravated the Witch. She curses you. During a Draw Cards Phase, you no longer draw based on your Skills and instead draw a number of Magic cards equal to your combined Skill Points. Remove this card.'
+		}
+	},
+	{
+		title: 'Dense Fog',
+		rank: 2,
+		skillCheck: {
+			luck: 1,
+			difficulty: 8,
+			applicableSkills: ['m', 's'],
+			successText: 'The fog clears.',
+			failureText: 'You become disoriented. You may only leave this card in a random direction as determined by the spinner.'
+		}
+	},
+	{
+		title: 'Femme Fatale',
+		rank: 2,
+		skillCheck: {
+			difficulty: 11,
+			applicableSkills: ['s', 'm'],
+			successText: 'You are not persuaded by her charm.',
+			failureText: '-2 Credits.'
+		}
+	},
+	{
+		title: 'Dirty Cop',
+		rank: 2,
+		skillCheck: {
+			difficulty: 10,
+			applicableSkills: ['c', 's'],
+			successText: 'The Cop buggers off to extort someone else.',
+			failureText: 'Alert Counter -1. You may spend 1 Credit to count this as a success instead.'
+		}
+	},
+	{
+		title: 'Pools of Jibwa',
+		rank: 2,
+		text: 'Whenever you start a turn on this card, draw 3 Magic Ability cards. If your magic stat is less than 3, take 1 Damage.'
+	},
+	{
+		title: 'Tree of Life',
+		rank: 2,
+		skillCheck: {
+			difficulty: 16,
+			applicableSkills: ['m'],
+			successText: 'The tree restores 2 Health to all players within 2 spaces.',
+			failureText: 'The tree withers. Remove this card.',
+			optional: true
+		}
+	},
+	{
+		title: 'Magic Rift',
+		rank: 2,
+		text: 'If your magic stat is less than 2, take 2 damage whenever you enter this card, regardless of whether or not it was revealed when you entered.'
+	},
+	{
+		title: 'Anti-Magic Barrier',
+		rank: 2,
+		text: 'If your magic stat is greater than 1, take 3 Damage when you leave this card. Do not take Damage if you leave from the direction you entered.'
+	},
+	{
+		title: 'Laser Matrix',
+		rank: 2,
+		skillCheck: {
+			luck: 1,
+			difficulty: 9,
+			applicableSkills: ['s', 't'],
+			successText: 'If you pass with 4 or more Tech points, the lasers are disarmed. Remove the card. Otherwise, the card stays on the board.',
+			failureText: 'Alert Counter -1'
+		}
+	},
+	{
+		title: 'Security Office',
+		rank: 2,
+		skillCheck: {
+			luck: 1,
+			difficulty: 16,
+			applicableSkills: ['s', 't', 'm', 'c'],
+			successText: 'The Security Office is overtaken. Alert Counter +2.',
+			failureText: 'An alarm sounds. Add one rank 2 card to the nearest empty space. Alert Counter -1.'
+		}
 	},
 	{
 		title: 'ICE',
@@ -617,13 +828,113 @@ export default [
 		text: 'Each time an Agent enters this card, -1 Alert Counter for each piece of Equipment they have equipped.'
 	},
 	{
-		title: 'Street Punks',
-		rank: 1,
+		title: 'Combat Mage',
+		rank: 2,
+		skillCheck: {
+			luck: 1,
+			difficulty: 10,
+			applicableSkills: ['m', 'c'],
+			successText: 'The Mage is defeated.',
+			failureText: 'Take 1 Damage.'
+		}
+	},
+	{
+		title: 'Retinal Scanner',
+		rank: 2,
+		skillCheck: {
+			difficulty: 9,
+			applicableSkills: ['t'],
+			successText: 'You\'ve spoofed an employees retinal signature.',
+			failureText: 'Onlookers are growing suspicious. Add 2 Rank 1 Encounter cards to the nearest empty spaces.'
+		}
+	},
+	{
+		title: 'Fingerprint Scanner',
+		rank: 2,
 		skillCheck: {
 			difficulty: 8,
-			applicableSkills: ['m', 'c', 's'],
-			successText: 'The punks take off.',
-			failureText: '-100 Credits.'
+			applicableSkills: ['t'],
+			successText: 'You\'re in.',
+			failureText: 'Alert Counter -1. If there are revealed Double Agents, they may look at your contract.'
+		}
+	},
+	{
+		title: 'Dog Pack',
+		rank: 2,
+		skillCheck: {
+			luck: 2,
+			difficulty: 8,
+			applicableSkills: ['s', 'm', 'c'],
+			successText: 'The dogs scatter in panic.',
+			failureText: 'Take 2 Damage. Alert Counter -1.'
+		}
+	},
+	{
+		title: 'Sniper',
+		rank: 2,
+		skillCheck: {
+			luck: 2,
+			difficulty: 9,
+			applicableSkills: ['t', 's'],
+			successText: 'You evade the Sniper\'s shots.',
+			failureText: 'Take 2 Damage.'
+		}
+	},
+	{
+		title: 'White Noise',
+		rank: 2,
+		skillCheck: {
+			luck: 1,
+			difficulty: 8,
+			applicableSkills: ['t'],
+			successText: 'The noise ceases.',
+			failureText: 'The noise persists. Alert Counter -1.'
+		},
+		optional: true,
+		revealText: 'Any player within one space of this card must discard 1 card after a Draw Cards phase.'
+	},
+	{
+		title: 'Cyborg',
+		rank: 2,
+		skillCheck: {
+			difficulty: 20,
+			applicableSkills: ['t', 'c'],
+			successText: 'The Cyborg collapses.',
+			failureText: 'Take 1 Damage.'
+		},
+		text: 'Tech contributions count double on this card.'
+	},
+	{
+		title: 'Botfly Swarm',
+		rank: 2,
+		skillCheck: {
+			luck: 1,
+			difficulty: 8,
+			applicableSkills: ['m', 's'],
+			successText: 'The swarm dissipates.',
+			failureText: 'The swarm will follow you. If you leave this card, -2 Health.'
+		}
+	},
+	{
+		title: 'Cybernetic Junkie',
+		rank: 2,
+		skillCheck: {
+			luck: 1,
+			difficulty: 9,
+			applicableSkills: ['t', 'c'],
+			successText: 'If no Tech cards were contributed, the Junkie overloads and detonates. Take 1 Damage.',
+			failureText: 'Take 1 Damage.'
+		}
+	},
+	{
+		title: 'Watchers',
+		rank: 2,
+		skillCheck: {
+			luck: 1,
+			difficulty: 8,
+			applicableSkills: ['m', 's'],
+			successText: 'The floating eyeballs pass through.',
+			failureText: 'The Watchers notice you and relay your location. Alert Counter -2.'
 		}
 	},
 	{
@@ -641,23 +952,48 @@ export default [
 		count: 2
 	},
 	{
+		title: 'Orc Thug',
+		rank: 1,
+		skillCheck: {
+			difficulty: 4,
+			applicableSkills: ['c', 's', 'm'],
+			successText: 'The Orc passes out.',
+			failureText: 'Take 1 Damage. The Orc grows angrier. +1 to this cards difficulty.'
+		}
+	},
+	{
+		title: 'Drunken Dwarf',
+		rank: 1,
+		skillCheck: {
+			difficulty: 8,
+			applicableSkills: ['c', 's'],
+			successText: 'You sidestep the dwarf.',
+			failureText: 'The Dwarf takes a swings at you. Roll: 3+, he misses and collapses. Remove this card. Otherwise, he connects. Take 1 Damage.'
+		}
+	},
+	{
+		title: 'Street Punks',
+		rank: 1,
+		skillCheck: {
+			difficulty: 3,
+			applicableSkills: ['m', 'c', 's'],
+			successText: 'The punks take off.',
+			failureText: '-1 Credits.'
+		}
+	},
+	{
 		title: 'Centaurs',
 		rank: 1,
 		text: 'Centaurs do not abide violence. Any time you are on this card, you must discard all Combat cards.'
 	},
 	{
-		title: 'Medical Tent',
-		rank: 1,
-		text: '+1 Health if you end your turn on this card. Remove the card.'
-	},
-	{
 		title: 'Security Camera',
 		rank: 1,
 		skillCheck: {
-			difficulty: 8,
+			difficulty: 3,
 			applicableSkills: ['c', 't', 's'],
 			successText: 'If more than 2 tech points were contributed. Reveal an adjacent card.',
-			failureText: 'Alert Counter -1'
+			failureText: 'Alert Counter -1.'
 		}
 	},
 	{
@@ -672,14 +1008,14 @@ export default [
 		}
 	},
 	{
-		title: 'Security Guard',
+		title: 'Guard',
 		rank: 1,
 		skillCheck: {
 			luck: 1,
 			difficulty: 3,
 			applicableSkills: ['c', 's', 'm'],
-			successText: 'If any non-stealth cards were played, Alert Counter -1. If a combat card was played, remove this card.',
-			failureText: 'Take 1 damage. Alert Counter -2.'
+			successText: 'The guard is incapacitated',
+			failureText: 'Alert Counter -1.'
 		}
 	},
 	{
@@ -700,32 +1036,126 @@ export default [
 			difficulty: 5,
 			applicableSkills: ['c', 's', 'm'],
 			successText: 'The dogs whimpers away.',
-			failureText: 'The dog tears at your flesh and barks loudly. -1 Health. -1 Alert Counter.'
+			failureText: 'The dog tears at your flesh and barks loudly. Take 1 Damage. -1 Alert Counter.'
 		}
 	},
 	{
 		title: 	'Mage Apprentice',
 		rank: 1,
 		skillCheck: {
-			difficulty: 5,
+			difficulty: 3,
 			applicableSkills: ['m', 'c'],
 			successText: 'The Apprentice is defeated.',
 			failureText: 'Take 1 Damage.'
 		}
 	},
 	{
-		title: 'EMP Trap',
+		title: 'EMP Emitter',
 		rank: 1,
 		text: 'Immediately discard all tech cards, and do not draw any while you are on this card.'
 	},
 	{
-		title: 'Disarm Alarm',
+		title: 'Laser Sights',
+		rank: 1,
+		skillCheck: {
+			difficulty: 4,
+			applicableSkills: ['t'],
+			successText: 'The enemies sights are disabled.',
+			failureText: 'You fail to disable the enemies sights.'
+		},
+		revealText: 'Any Skill Check on the board that accepts Combat cards gains +1 difficulty.'
+	},
+	{
+		title: 'Motion Tracker',
+		rank: 1,
+		skillCheck: {
+			difficulty: 6,
+			applicableSkills: ['s', 't'],
+			successText: 'The motion tracker is disabled.',
+			failureText: 'You are detected by the motion tracker. Alert Counter -1.'
+		},
+		revealText: 'Any time an Agent moves onto this card, Alert Counter -1.'
+	},
+	{
+		title: 'Alarm System',
 		rank: 1,
 		skillCheck: {
 			difficulty: 6,
 			applicableSkills: ['t', 's'],
-			successText: 'Alert Counter +1',
+			successText: 'The system is disarmed. Alert Counter +1',
 			failureText: 'Alert Counter -1'
 		}
+	},
+	{
+		title: 'Secretary',
+		rank: 1,
+		skillCheck: {
+			difficulty: 2,
+			applicableSkills: ['s'],
+			successText: 'The Secretary waves you by as he plays a game on his phone.',
+			failureText: 'The Secretary asks you to wait a moment. Remove this card. Alert Counter -1.'
+		}
+	},
+	{
+		title: 'Servbot',
+		rank: 1,
+		skillCheck: {
+			difficulty: 4,
+			applicableSkills: ['t'],
+			successText: 'The primitive robot malfunctions.',
+			failureText: 'The Servbot demands payment for services. Pay 1 Credit or Alert Counter -1.'
+		}
+	},
+	{
+		title: 'Locked Door',
+		rank: 1,
+		skillCheck: {
+			difficulty: 5,
+			applicableSkills: ['t'],
+			successText: 'The door is unlocked.',
+			failureText: 'You may bust down the door. Remove this card. Alert Counter -1.'
+		},
+		text: 'You may only leave this card from the direction you entered.'
+	},
+	{
+		title: 'Barbed Wire',
+		rank: 1,
+		skillCheck: {
+			difficulty: 4,
+			applicableSkills: ['t'],
+			successText: 'The barbed wire is removed.',
+			failureText: 'You\'re tangled in the barbed wire. Take 1 Damage or spend your next turn on this card untangling yourself. Remove this card after you do.'
+		}
+	},
+	{
+		title: 'Trip Wire',
+		rank: 1,
+		skillCheck: {
+			difficulty: 3,
+			applicableSkills: ['s', 't'],
+			successText: 'You step over the wire. This card is not removed.',
+			failureText: 'Alert Counter -1. This card is removed.'
+		}
+	},
+	{
+		title: 'Spark',
+		rank: 1,
+		skillCheck: {
+			difficulty: 4,
+			applicableSkills: ['t', 'm'],
+			successText: 'The spirit fizzles out. Draw 1 Magic card.',
+			failureText: 'The spirit shocks you. Take 1 Damage, Discard 1 Tech card.'
+		}
+	},
+	{
+		title: 'Innocent Bystander',
+		rank: 1,
+		skillCheck: {
+			difficulty: 1,
+			applicableSkills: ['c'],
+			successText: 'Take the bystander hostage. Draw 2 Combat cards. Alert Counter -1.',
+			failureText: 'If any Agent occupant has more than 5 cards, Alert Counter -1.'
+		}
 	}
+
 ];

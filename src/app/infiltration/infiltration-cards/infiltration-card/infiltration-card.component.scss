@@ -1,0 +1,82 @@
+@import '../../../../variables';
+
+.agt-infiltration-card {
+	height: 600px;
+	width: 500px;
+}
+
+.board-base-setup {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+
+	.board-row {
+		flex-direction: row;
+		justify-content: center;
+		line-height: 0;
+
+		.board-cell {
+			display: inline-block;
+			border: 1px solid black;
+			background-color: black;
+			height: 12px;
+			width: 12px;
+			margin: 2px;
+
+			&.Encounter-1 {
+				background-color: $agt-green-card-back-color;
+				border-color: $agt-green-card-back-color;
+			}
+
+			&.Encounter-2 {
+				background-color: $agt-yellow-card-back-color;
+				border-color: $agt-yellow-card-back-color;
+			}
+
+			&.Encounter-3 {
+				background-color: $agt-red-card-back-color;
+				border-color: $agt-red-card-back-color;
+			}
+
+			&.Encounter-4 {
+				background-color: $agt-black-card-back-color;
+				border-color: $agt-black-card-back-color;
+			}
+
+			&.Loot-1 {
+				background-color: $agt-bronze;
+				border-color: $agt-bronze;
+			}
+
+			&.Loot-2 {
+				background-color: $agt-silver;
+				border-color: $agt-silver;
+			}
+
+			&.Loot-3 {
+				background-color: $agt-gold;
+				border-color: $agt-gold;
+			}
+
+			&.None {
+				background-color: $agt-card-background;
+				border-color: $agt-card-background;
+			}
+
+			&.Entrance {
+				background-color: $agt-card-background;
+			}
+
+			&.Exit {
+				background-color: $agt-card-background;
+				content: 'X';
+			}
+
+			&.Empty {
+				background-color: $agt-card-background;
+			}
+		}
+	}
+}
+

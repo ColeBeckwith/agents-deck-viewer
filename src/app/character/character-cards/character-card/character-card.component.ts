@@ -41,4 +41,12 @@ export class CharacterCardComponent implements OnInit {
 		this.character.favor++;
 	}
 
+	increaseCredits() {
+		this.character.credits += 1;
+	}
+
+	decreaseCredits() {
+		this.character.credits -= 1;
+	}
+
 }

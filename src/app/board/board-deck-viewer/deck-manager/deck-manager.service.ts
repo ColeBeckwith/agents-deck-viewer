@@ -14,11 +14,14 @@ import { EquipmentCard } from '../../../../classes/EquipmentCard';
 import { CharacterCard } from '../../../../classes/CharacterCard';
 import { InfiltrationCard } from '../../../../classes/InfiltrationCard';
 import { LootCard } from '../../../../classes/LootCard';
+import { Card } from '../../../../classes/Card';
 
 @Injectable()
 export class DeckManagerService {
 
 	public decks: Array<Deck> = [];
+
+	public pool: Array<Card> = [];
 
 	constructor() {
 	}
@@ -53,8 +56,10 @@ export class DeckManagerService {
 		});
 
 		abilityCardData.forEach((cardDatum) => {
-			let abilityCard = new AbilityCard(cardDatum);
-			this.discardCard(abilityCard);
+			for (let i = 0; i < cardDatum.count; i++) {
+				let abilityCard = new AbilityCard(cardDatum);
+				this.discardCard(abilityCard);
+			}
 		});
 
 		equipmentCardData.forEach((cardDatum) => {
@@ -106,6 +111,14 @@ export class DeckManagerService {
 
 		if (card instanceof LootCard) {
 			this.selectDeck('Loot', card.rank).discard(card);
+		}
+	}
+
+	public removeFromPool(card) {
+		for (let i = this.pool.length; i >= 0; i--) {
+			if (this.pool[i] === card) {
+				this.pool.splice(i, 1);
+			}
 		}
 	}
 

@@ -48,20 +48,20 @@ export class AbilityCardsComponent implements OnInit {
 		cards.forEach((card) => {
 			switch (card.type) {
 				case 'Magic':
-					totalMagicValue += card.value;
-					this.totalMagicCards++;
+					totalMagicValue += (card.value * card.count);
+					this.totalMagicCards += card.count;
 					break;
 				case 'Combat':
-					totalCombatValue += card.value;
-					this.totalCombatCards++;
+					totalCombatValue += (card.value * card.count);
+					this.totalCombatCards += card.count;
 					break;
 				case 'Tech':
-					totalTechValue += card.value;
-					this.totalTechCards++;
+					totalTechValue += (card.value * card.count);
+					this.totalTechCards += card.count;
 					break;
 				case 'Stealth':
-					totalStealthValue += card.value;
-					this.totalStealthCards++;
+					totalStealthValue += (card.value * card.count);
+					this.totalStealthCards += card.count;
 					break;
 				default:
 					break;

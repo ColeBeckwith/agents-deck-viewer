@@ -40,18 +40,24 @@
 		</div>
 	</div>
 
-	<div class="health-and-favor">
-		<p>
+	<div class="health-favor-credits">
+		<span>
 			<i *ngIf="interactive" class="fa fa-arrow-left" (click)="reduceHealth()"></i>
 			{{ character.health }} <i class="ra ra-health"></i>
 			<i *ngIf="interactive" class="fa fa-arrow-right" (click)="addHealth()"></i>
-		</p>
+		</span>
 
-		<p>
+		<span>
 			<i *ngIf="interactive" class="fa fa-arrow-left" (click)="reduceFavor()"></i>
 			{{ character.favor }} <i class="ra ra-double-team"></i>
 			<i *ngIf="interactive" class="fa fa-arrow-right" (click)="addFavor()"></i>
-		</p>
+		</span>
+
+		<span>
+			<i *ngIf="interactive" class="fa fa-arrow-left" (click)="decreaseCredits()"></i>
+			{{ character.credits }} <i class="fa fa-gg"></i>
+			<i *ngIf="interactive" class="fa fa-arrow-right" (click)="increaseCredits()"></i>
+		</span>
 	</div>
 
 	<div class="equipment-slots">

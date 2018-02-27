@@ -1,0 +1,23 @@
+@import '../../variables';
+
+:host {
+	position: fixed;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.card-container {
+	padding: 5px;
+}
+
+.card-pool-container {
+	display: flex;
+	flex-direction: row;
+	padding: 15px;
+	background-color: $agt-card-background;
+	border: 5px solid black;
+	border-radius: 8px;
+}

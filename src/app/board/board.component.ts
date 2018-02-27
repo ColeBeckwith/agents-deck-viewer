@@ -10,7 +10,7 @@ import { PlayerService } from '../player-service/player.service';
 })
 export class BoardComponent implements OnInit {
 
-	constructor(private deckManager: DeckManagerService,
+	constructor(public deckManager: DeckManagerService,
 				public boardService: BoardService,
 				private playerService: PlayerService) {
 	}
